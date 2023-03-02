@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+
+DOCKERPATH=`which docker`
+DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/docker-ce"
+
+if [ -z "$DOCKERPATH" ];then
+    wget -O- https://get.docker.com/ | sh
+fi
+
 git clone https://github.com/NoOne-hub/v2ray_client v2ray_client/
 
 echo "请输入面板用户名(默认为NoOne-hub)"
